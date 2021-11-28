@@ -5,10 +5,13 @@
 </template>
 
 <script>
-import homeCheck from './childCopms/homeCheck.vue';
+import HomeCheck from './childCopms/homeCheck';
 export default {
-  components: { homeCheck },
   name: 'Home',
+
+  components: {
+    homeCheck
+  },
 
   data() {
     return {

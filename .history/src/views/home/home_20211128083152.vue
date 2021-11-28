@@ -1,6 +1,6 @@
 <template>
 <div class="home">
-  <home-check/>
+  <home-check
 </div>
 </template>
 

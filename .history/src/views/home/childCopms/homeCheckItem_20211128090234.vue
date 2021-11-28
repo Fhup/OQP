@@ -1,18 +1,17 @@
 <template>
-<div class="home">
-  <home-check/>
-</div>
+    <div class="checkitem">
+        <el-card shadow="hover" >
+          java试题
+        </el-card>
+    </div>
 </template>
 
 <script>
-import homeCheck from './childCopms/homeCheck.vue';
 export default {
-  components: { homeCheck },
-  name: 'Home',
+  name: 'homeCheckItem',
 
   data() {
     return {
-      
     };
   },
 
@@ -27,6 +26,9 @@ export default {
 </script>
 
 <style scoped>
-  
+
 </style>
 
+<style>
+
+</style>
