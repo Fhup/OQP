@@ -19,11 +19,29 @@
       <div class="block">
         <span class="demonstration">选择试题个数(默认为10个)</span>
         <el-slider
-          v-model="value"
+          v-model="numvalue"
           :step="10"
           :min="10"
           show-stops>
         </el-slider>
+      </div>
+      <div>
+        <span>输入试题类型:</span>
+        <el-select
+          v-model="value"
+          filterable
+          remote
+          clearable
+          placeholder="请输入关键词"
+          :remote-method="remoteMethod"
+          :loading="loading">
+          <el-option
+            v-for="item in options"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value">
+          </el-option>
+        </el-select>
       </div>
     </div>
     <span slot="footer" class="dialog-footer">
@@ -45,13 +63,23 @@ export default {
       type:["java","c","javascript","vue"],
       dialogVisible: false,
       checked:null,
-      value:[10,100]
+      numvalue:10,
+
+      //单选框
+      options: [],
+        value: [],
+        list: [],
+        loading: false,
+        states: ["java","j","jdsfsd"]
     };
   },
 
   mounted() {
-    
-  },
+    //单选框
+      this.list = this.states.map(item => {
+        return { value: `${item}`, label: `${item}` };
+      });
+    },
 
   methods: {
     handleClose(done) {
@@ -64,7 +92,24 @@ export default {
     check(info){
       this.dialogVisible=true
       this.checked=info
-    }
+      this.numvalue=10
+    },
+
+    //单选框
+    remoteMethod(query) {
+        if (query !== '') {
+          this.loading = true;
+          setTimeout(() => {
+            this.loading = false;
+            this.options = this.list.filter(item => {
+              return item.label.toLowerCase()
+                .indexOf(query.toLowerCase()) > -1;
+            });
+          }, 200);
+        } else {
+          this.options = [];
+        }
+      }
   },
 };
 </script>

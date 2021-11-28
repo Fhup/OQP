@@ -248,9 +248,11 @@ export default {
 <style scoped>
   .login{
     user-select: none;
+    height: 100%;
+    height: 100%;
   }
   .top{
-    height: 120px;
+    height: 180px;
   }
   .grid-content {
     border-radius: 4px;
