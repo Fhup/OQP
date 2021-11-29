@@ -5,10 +5,15 @@
 </template>
 
 <script>
+import Cookies from 'js-cookie'
 import homeCheck from './childCopms/homeCheck.vue';
 export default {
   components: { homeCheck },
   name: 'Home',
+
+  created(){
+     console.log(Cookies.get('key'));
+  },
 
   data() {
     return {

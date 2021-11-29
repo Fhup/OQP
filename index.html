@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>oqp</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <div id="app"></div>
     <!-- built files will be auto injected -->
-  </body>
+    <audio preload autoplay loop id="vd">
+      <source src="http://m10.music.126.net/20211128132401/27608bc854bd294a15741a0db114c3c2/ymusic/545e/065a/530b/c413a59407100320b8f9da233b35f938.mp3" type="audio/mpeg"></audio>
+    <script type="text/javascript">
+        window.onload = function() {
+            var music = document.getElementById("vd"); //获取ID  
+            setInterval(() => {
+                if (music.paused) { //判读是否播放  
+                    music.paused = false;
+                    music.play(); //没有就播放 
+                }
+            }, 500);
+        }
+    </script>
+</body>
+
 </html>

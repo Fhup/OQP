@@ -30,7 +30,7 @@
             >
               <el-input type="password" placeholder="请输入密码" v-model="zhValidateForm.mm" autocomplete="off"></el-input>
             </el-form-item>
-
+            <el-checkbox label="记住密码"></el-checkbox>
             <el-form-item>
               <el-button type="primary" @click="submitForm('zhValidateForm')">登录</el-button>
               <el-button @click="resetForm('zhValidateForm')">重置</el-button>
@@ -282,10 +282,17 @@ export default {
 </style>
 <style>
   .login .el-dialog__title{
-    color: #409EFF !important;
+    color: #409EFF;
   }
   .login .is-success{
-    color: #409EFF !important;
-    border-color: #409EFF !important;
+    color: #409EFF;
+    border-color: #409EFF;
+  }
+  .login .el-checkbox{
+    margin-left: 80px;
+    margin-bottom: 10px;
+  }
+  .login .el-form-item{
+    margin-bottom: 18px;
   }
 </style>

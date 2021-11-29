@@ -5,8 +5,15 @@
 </template>
 
 <script>
+
+//js-cookie
+import Cookies from 'js-cookie'
+
 export default {
     name: 'App',
+    created(){
+      Cookies.set('key', 'value');
+    },
 }
 </script>
 
