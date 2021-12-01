@@ -7,7 +7,7 @@
       </el-row>
       <div style="display:flex">
         <el-row v-for="(item,index) in type" :key="index" style="flex:1;min-width:300px;margin:0 10px;">
-          <home-check-item @click.native="check(item)" :type="item"/>
+          <home-check-item @click.native="check(item)" :type="item" :color="colors[index]"/>
         </el-row>
       </div>
   <el-dialog
@@ -67,10 +67,13 @@ export default {
 
       //单选框
       options: [],
-        value: [],
-        list: [],
-        loading: false,
-        states: ["java","j","jdsfsd"]
+      value: [],
+      list: [],
+      loading: false,
+      states: ["java","j","jdsfsd"],
+
+      //颜色
+      colors:["#FF6347","#40E0D0","#EE82EE","#F5DEB3"]
     };
   },
 

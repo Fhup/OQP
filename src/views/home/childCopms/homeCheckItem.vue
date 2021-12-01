@@ -1,6 +1,6 @@
 <template>
     <div class="grid-content">
-        <el-card shadow="hover">
+        <el-card shadow="hover" :style="{backgroundColor:color}">
           {{type}}
         </el-card>
     </div>
@@ -19,6 +19,10 @@ export default {
     type:{
       type:String,
       default:null
+    },
+    color:{
+      type:String,
+      default:""
     }
   },
 
