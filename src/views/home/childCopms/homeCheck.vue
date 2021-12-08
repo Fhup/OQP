@@ -119,8 +119,10 @@ export default {
 
 <style scoped>
 .homecheck{
-    min-width: 1000px;
-    user-select: none;
+  width: 100%;
+  height: 100%;
+  min-width: 1000px;
+  user-select: none;
   }
   .top{
     height: 200px;
